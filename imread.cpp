@@ -1,22 +1,22 @@
-#include <stdio.h>
+#include <iostream>
 #include <opencv2/opencv.hpp>
 
 
-int main(int argc, char** argv ) {
-    if ( argc != 2 ) {
-        printf("usage: ./imread <Image_Path>\n");
+int main(int argc, char** argv) {
+    if (argc != 2) {
+        std::cout<<"usage: ./imread <Image_Path>"<<std::endl;
         return -1;
     }
 
     cv::Mat image;
     image = cv::imread( argv[1], 1 );
 
-    if ( !image.data ) {
-        printf("No image data \n");
+    if (!image.data) {
+        std::cout<<"No image data"<<std::endl;
         return -1;
     }
 
-    cv::namedWindow("Display Image", cv::WINDOW_AUTOSIZE );
+    cv::namedWindow("Display Image", cv::WINDOW_AUTOSIZE);
     cv::imshow("Display Image", image);
 
     cv::waitKey(0);

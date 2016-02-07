@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
     }
 
     cv::Mat image;
-    image = cv::imread( argv[1], 1 );
+    image = cv::imread(argv[1]);
 
     if (!image.data) {
         std::cout<<"No image data"<<std::endl;
